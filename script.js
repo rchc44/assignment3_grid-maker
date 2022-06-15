@@ -52,9 +52,12 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+	if (tbl.childElementCount==0) return;
+	for (let i=0;i<tbl.childElementCount;i++) {
+		let row=tbl.children[i];
+		row.removeChild(row.lastElementChild);
+	}
 }
-
 // Set global variable for selected color
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
