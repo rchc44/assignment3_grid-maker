@@ -29,9 +29,21 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+	if (tbl.childElementCount==0) {
+		let newRow=document.createElement("tr");
+		let cell = document.createElement("td");
+		newRow.appendChild(cell);
+		tbl.appendChild(newRow);
+	}
+	else {
+		for (let i=0; i<tbl.childElementCount; i++) { // for each row, append a cell, which results in a whole column
+			let cell=document.createElement("td");
+			tbl.children[i].appendChild(cell);
+		}
+		
+	}
+	
 }
-
 // Remove a row
 function removeR() {
     alert("Clicked Remove Row"); // Replace this line with your code.
