@@ -66,7 +66,16 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+	for (let i=0; i<tbl.childElementCount; i++) {
+		let row=tbl.children[i];
+		for (let j=0; j<row.childElementCount; j++) {
+			let cell = row.children[j];
+			if (!cell.style.backgroundColor && colorSelected!="SELECT") {
+				cell.style.backgroundColor=colorSelected;
+			}
+		}
+		
+	}
 }
 
 // Fill all cells
