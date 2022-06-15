@@ -10,7 +10,21 @@ tbl.addEventListener("click",fillCell);
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    // alert("Clicked Add Row"); // Replace this line with your code.
+	let newRow = document.createElement("tr");
+	
+	if (tbl.childElementCount==0) { // no rows exist
+		let cell = document.createElement("td");
+		newRow.appendChild(cell);
+	}
+	else {
+		for (let i=0; i<tbl.children[0].childElementCount; i++) {
+			let cell = document.createElement("td");
+			newRow.appendChild(cell);
+		}			
+	}
+
+	tbl.appendChild(newRow);
 }
 
 // Add a column
