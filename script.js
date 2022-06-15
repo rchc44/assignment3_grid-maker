@@ -3,6 +3,11 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
+
+const tbl=document.querySelector("table");
+tbl.addEventListener("click",fillCell);
+
+
 // Add a row
 function addR() {
     alert("Clicked Add Row"); // Replace this line with your code.
@@ -42,4 +47,14 @@ function fillAll(){
 // Clear all cells
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
+}
+
+
+// Fill individual cell with selected color
+function fillCell(e) {
+	let target=e.target;
+	console.log(target);
+	if (colorSelected!="SELECT") {
+		target.style.backgroundColor=colorSelected;
+	}
 }
