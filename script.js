@@ -80,9 +80,16 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+	for (let i=0; i<tbl.childElementCount; i++) {
+		let row=tbl.children[i];
+		for (let j=0; j<row.childElementCount;j++) {
+			let cell=row.children[j];
+			if (colorSelected!="SELECT") {
+				cell.style.backgroundColor=colorSelected;
+			}
+		}
+	}
 }
-
 // Clear all cells
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
