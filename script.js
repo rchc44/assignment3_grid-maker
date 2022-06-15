@@ -46,7 +46,8 @@ function addC() {
 }
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+	if (tbl.childElementCount==0) return;
+	tbl.removeChild(tbl.lastElementChild);
 }
 
 // Remove a column
